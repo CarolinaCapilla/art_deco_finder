@@ -7,14 +7,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
+
+    <%= render "shared/navbar"%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render "shared/footer"%>
   </body>
 </html>
