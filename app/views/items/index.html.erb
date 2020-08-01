@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card">
+          <div class="card-description">
+            <h2><%= item.title %></h2>
+            <h2><%= item.description %></h2>
+            <h2><%= item.category %></h2>
+            <p><em><%= item.price %></em></p>
+          </div>
+          <%= link_to "", item_path(item), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
