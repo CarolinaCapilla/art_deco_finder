@@ -1,0 +1,25 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 100vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 120px;
+  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.banner h2 {
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: lighter;
+  letter-spacing: 5px;
+  font-style: italic;
+}
