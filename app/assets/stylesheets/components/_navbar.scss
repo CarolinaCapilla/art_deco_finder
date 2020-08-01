@@ -1,6 +1,16 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #4e4b4a;
+}
+
+.nav-item {
+  color: white;
+  margin-left: 2px;
+}
+
+.nav-link {
+  color: white;
+  margin-left: 2px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +19,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#navbarSupportedContent {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#navbarDropdown {
+  font-size: 25px;
+  margin-top: 5px;
 }
