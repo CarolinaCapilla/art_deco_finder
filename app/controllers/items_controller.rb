@@ -8,9 +8,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-     @item = Item.new(items_params)
-     @item.save
-    redirect_to item_path(@item)
+    @item = Item.new(items_params)
+    if @item.save
+      redirect_to item_path(@item)
+    else
+      render 'new'
+    end
   end
 
   private
