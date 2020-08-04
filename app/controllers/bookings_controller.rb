@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all
-  end
+  # def index
+  #   @bookings = Booking.all
+  # end
 
   def new
     @booking = Booking.new
@@ -25,6 +25,6 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:date, :item_id, :user_id)
+    params.require(:booking).permit(:start_date, :item_id, :user_id)
   end
 end
