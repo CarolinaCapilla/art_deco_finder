@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to item_path(@item), notice: "Item successfully created."
+      redirect_to @item, notice: "Item successfully created."
     else
       render :new
     end
@@ -45,6 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :price, :description, :category, :address)
+    params.require(:item).permit(:title, :price, :description, :category, :address, :photo)
   end
 end

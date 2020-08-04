@@ -6,7 +6,7 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :price %>
-        <%= f.input :category, collection: ["Paintings", "Abstract", "Print", "Photo", "Drawings", "Decorative"] %>
+        <%= f.input :category %>
         <%= f.input :photo, as: :file %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
