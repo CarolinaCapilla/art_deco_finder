@@ -10,16 +10,16 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(bookings_params)
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking), notice: "Booking succesfully created."
     else
-      render 'new'
+      render :new
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
-    @Booking.destroy
-    redirect_to booking_path(@booking.user)
+    @booking.destroy
+    redirect_to booking_path(@booking.user), notice: "Booking succesfully destroyed."
   end
 
   private

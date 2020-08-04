@@ -3,7 +3,7 @@
     <div class="col-md-8">
 
       <h3>Select your pick!</h3>
-      <%= simple_form_for [item, booking] do |f| %>
+      <%= simple_form_for @booking do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.input :message %>
