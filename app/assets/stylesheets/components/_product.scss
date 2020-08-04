@@ -1,0 +1,115 @@
+.layout-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+.product-grid {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 36px;
+  grid-row-gap: 36px;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+}
+
+#product-node {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 3;
+  grid-column-start: span 3;
+  -ms-grid-column-span: 3;
+  grid-column-end: span 3;
+}
+
+.product-content-wrap {
+  position: relative;
+  padding-top: 36px;
+  padding-right: 36px;
+  padding-bottom: 36px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.size-link {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #18181d;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.paragraph {
+  margin-bottom: 10px;
+}
+
+.product-product-info-wrap {
+    margin-top: 20px;
+  }
+
+.paragraph-70 {
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.product-deco-text {
+  position: absolute;
+  left: 0%;
+  top: auto;
+  right: auto;
+  bottom: 0%;
+  z-index: 1;
+  margin-top: 20px;
+  margin-bottom: 36px;
+  opacity: 0.2;
+  font-family: 'Work Sans', sans-serif;
+  color: #5e5348;
+  font-size: 100px;
+  line-height: 120px;
+  font-weight: 100;
+}
+
+#product-node-2 {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 9;
+  grid-column-start: span 9;
+  -ms-grid-column-span: 9;
+  grid-column-end: span 9;
+}
+
+.product-image {
+  min-height: 720px;
+  background-image: url('solis_fabric_72_300.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
