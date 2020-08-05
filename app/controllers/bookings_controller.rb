@@ -5,7 +5,9 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: current_user.id)
   end
 
-  def show; end
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
   def new
     @booking = Booking.new
@@ -29,7 +31,7 @@ class BookingsController < ApplicationController
   def update
     @booking.update(booking_params)
     if @booking.save
-      redirect_to item_path(@item), notice: "Booking successfully updated."
+      redirect_to @item, notice: "Booking successfully updated."
     else
       render :edit
     end
@@ -38,7 +40,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to booking_path(@booking.user), notice: "Booking successfully destroyed."
+    redirect_to @item, notice: "Booking successfully destroyed."
   end
 
   private
@@ -48,6 +50,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :message, :user_id, :item_id)
+    params.require(:booking).permit(:start_date, :end_date, :message)
   end
 end

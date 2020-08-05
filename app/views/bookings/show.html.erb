@@ -3,13 +3,13 @@
     <div class="col-8">
       <h2>Booking enquiry completed</h2>
       <p><%= @booking.start_date %></p>
-      <%# <p><%= @booking.end_date %></p> %>
-      <%# <p>User: <%= @booking.item.user_id %></p> %>
-      <%# <p>Title: <%= @booking.item.title %></p> %>
-      <%# <p>Description: <%= @booking.item.description %></p> %>
-      <%# <p>Price: £<%= @booking.item.price %></p> %>
+      <p><%= @booking.end_date %></p>
+      <p>User: <%= @booking.item.user_id %></p>
+      <p>Title: <%= @booking.item.title %></p>
+      <p>Description: <%= @booking.item.description %></p>
+      <p>Price: £<%= @booking.item.price %></p>
     </div>
   </div>
-  <%# <%= link_to "Edit Booking", edit_item_booking_path(@booking) %> %>
-  <%# <%= link_to "Cancel Booking", edit_item_booking_path(@booking), method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %> %>
+  <%= link_to "Edit Booking", edit_item_booking_path(@booking) %>
+  <%= link_to "Cancel Booking", edit_item_booking_path(@booking), method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
 </div>
