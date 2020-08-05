@@ -12,4 +12,5 @@
   </div>
   <%= link_to "Edit Booking", edit_item_booking_path(@booking) %>
   <%= link_to "Cancel Booking", edit_item_booking_path(@booking), method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
+  <%= link_to "All my bookings", item_bookings_path(@booking) %>
 </div>
