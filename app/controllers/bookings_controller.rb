@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       # set booking to true @booking.booked = true ?
-      # @booking.update_attributes(booked: true)
+      @booking.update_attributes(booked: true)
       redirect_to item_booking_path(@item, @booking), notice: "Booking successfully created."
     else
       render :new
