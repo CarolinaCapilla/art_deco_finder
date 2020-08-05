@@ -2,15 +2,15 @@ class Booking < ApplicationRecord
   belongs_to :item
   belongs_to :user
 
-  validates :starts_at, :ends_at, presence: true
-  validate :ends_at_after_starts_at
+  validates :start_date, :end_date, presence: true
+  validate :end_date_after_start_date
 
   private
 
-  def ends_at_after_starts_at
-    return if ends_at.blank? || starts_at.blank?
+  def end_date_after_start_date
+    return if end_date.blank? || start_date.blank?
 
-    if ends_at < starts_at
+    if end_date < start_date
       errors.add(:ends_at, "must be after the start date")
     end
   end

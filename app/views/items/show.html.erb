@@ -1,12 +1,17 @@
 <div class="section">
   <div class="layout-grid product-grid">
-    <div id="product-node" class="product-content-wrap"><a href="#" class="size-link">Product Name</a>
-      <div class="paragraph">£999.99</div>
+    <div id="product-node" class="product-content-wrap"><a href="#" class="size-link"><%= @item.title %></a>
+      <div class="paragraph">£<%= @item.price %></div>
       <div class="product-product-info-wrap">
-        <div class="paragraph-70">Create inspiring, beautifully illuminated rooms. Review our wide selection of stylish contemporary lamps for living room, bedroom, bath and kitchen—and get enlightened about modern design.</div>
+        <div class="paragraph-70"><%= @item.description %></div>
       </div>
     </div>
     <div class="product-deco-text">Category</div>
-    <div id="product-node-2" class="product-image"></div>
+    <div id="product-node-2" class="product-image">
+      <%= cl_image_tag @item.photo.key,crop: :fill %>
+    </div>
+    <%= link_to "Book", new_item_booking_path(@item) %>
+    <%= link_to "Edit", edit_item_path(@item) %>
+    <%= link_to "Delete", item_path(@item), method: :delete, data: {confirm:"Are you sure you want to delete this item?"} %>
   </div>
 </div>
