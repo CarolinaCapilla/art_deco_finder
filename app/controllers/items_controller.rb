@@ -6,8 +6,7 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @item = Item.new
@@ -15,15 +14,15 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
     if @item.save
-      redirect_to @item, notice: "Item successfully created."
+      redirect_to item_path(@item), notice: "Item successfully created."
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @item.updte(item_params)
