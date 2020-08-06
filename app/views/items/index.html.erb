@@ -1,5 +1,15 @@
 <div class="container">
   <div class="row justify-content-around mt-3">
+    <!-- [...] -->
+    <%= form_tag items_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an art"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary mt-1" %>
+    <% end %>
+<!-- the list of movies -->
     <% @items.each do |item| %>
       <div class="col-12 col-md-6 col-lg-3">
         <% if item.photo.attached? %>

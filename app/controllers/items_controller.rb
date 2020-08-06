@@ -3,7 +3,10 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
   def index
-    @items = Item.all
+    if params[:query].present?
+      @items = Item.search_by_title_and_description(params[:query])
+    else
+      @items = Item.all
   end
 
   def show; end
