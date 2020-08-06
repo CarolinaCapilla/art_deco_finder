@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path , class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "https://res.cloudinary.com/dc8t19jnn/image/upload/v1596724677/Black_and_White_Circle_Personal_Logo_1_j9hde0.png" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,11 +14,11 @@
         <%= link_to "Sign In", new_user_session_path , class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%# <%= link_to "My Bookings", item_bookings_path(@item), class: "nav-link" %> 
-        
+        <%# <%= link_to "My Bookings", item_bookings_path(@item), class: "nav-link" %>
+
       </li>
       <li class="nav-item">
-        <%= link_to "Publish an Offer", new_item_path , class: "nav-link" %>
+        <%= link_to "Create a Listing", new_item_path , class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <i class="fas fa-user avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
@@ -29,4 +29,3 @@
     </ul>
   </div>
 </div>
-
