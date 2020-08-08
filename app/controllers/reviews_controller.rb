@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_item
-
   def new
+    @item = Item.find(params[:item_id])
     @review = Review.new
   end
 
@@ -23,10 +22,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-
-  def set_item
-    @item = Item.find(params[:item_id])
-  end
 
   def review_params
     params.require(:review).permit(:content)

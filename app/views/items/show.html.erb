@@ -4,6 +4,17 @@
       <div class="paragraph">£<%= @item.price %></div>
       <div class="product-product-info-wrap">
         <div class="paragraph-70"><%= @item.description %></div>
+        <div>Reviews</div>
+        <ul class="list-group">
+          <% @item.reviews.each do |review| %>
+            <li class="paragraph-70"><%= review.content %>
+              <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
     <div class="product-deco-text">Category / <%= @item.category %></div>
@@ -11,19 +22,7 @@
       <%= cl_image_tag @item.photo.key,crop: :fill %>
     </div>
 
-    <ul class="list-group">
-      <% @item.reviews.each do |review| %>
-        <li class="list-group-item"><%= review.content %></li>
-      <% end %>
-    </ul>
 
-    <li class="list-group-item">
-      <%= review.content %>
-      <%= link_to "Remove",
-                  review_path(review),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-    </li>
 
     <%= link_to "Book", new_item_booking_path(@item) %>
     <%= link_to "Edit", edit_item_path(@item) %>
