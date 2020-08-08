@@ -24,6 +24,12 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr"
+
+flatpickr(".datepicker", {
+
+});
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
