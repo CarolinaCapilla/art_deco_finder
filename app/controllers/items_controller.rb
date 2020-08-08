@@ -3,13 +3,14 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
   def index
-    @items = Item.all
+    @items = policy_scope(Item)
   end
 
   def show; end
 
   def new
     @item = Item.new
+    authorize @item
   end
 
   def create
@@ -41,6 +42,7 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def item_params
