@@ -1,9 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :edit, :destroy]
+  before_action :set_booking, only: %i[show update edit destroy]
 
   def index
-    # @bookings = Booking.where(user_id: current_user.id)
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def show; end
@@ -19,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       # set booking to true @booking.booked = true ?
-      # @booking.update_attributes(booked: true)
+      @booking.update_attributes(booked: true)
       redirect_to booking_path(@booking), notice: "Booking successfully created."
     else
       render :new
