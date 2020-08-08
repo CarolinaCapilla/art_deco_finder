@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <%# <% path = params[:action] == :new ? 'item_bookings_path' : "item_booking_path(#{@item},#{@booking})" %> %>
+     
       <%= simple_form_for [@item, @booking] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
