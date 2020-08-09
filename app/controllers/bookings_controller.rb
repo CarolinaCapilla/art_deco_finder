@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show update edit destroy]
 
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    @bookings = policy_scope(Booking.where(user_id: current_user.id))
   end
 
   def show; end
@@ -10,12 +10,14 @@ class BookingsController < ApplicationController
   def new
     @item = Item.find(params[:item_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.item = Item.find(params[:item_id])
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       # set booking to true @booking.booked = true ?
       @booking.update_attributes(booked: true)
@@ -47,6 +49,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def booking_params

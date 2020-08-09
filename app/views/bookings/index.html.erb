@@ -8,10 +8,12 @@
       <p>Category: <%= booking.item.category %></p>
       <p>Description: <%= booking.item.description %></p>
       <p>Price: £<%= booking.item.price %></p>
+      <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
       <hr>
     <% end %>
   <% else %>
     <p>No bookings so far, time to have a look at some awesome Artwork!</p>
   <% end %>
   <%= link_to "Back", root_path %>
+
 </div>
