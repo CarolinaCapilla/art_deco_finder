@@ -28,9 +28,11 @@
       </li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <i class="fas fa-user avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
+          <i class="fas fa-caret-down" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path , method: :delete, class: "dropdown-item" %>
+            <a class="dropdown-item" href="#"><%= current_user.email %></a>
+            <div class="dropdown-divider"></div>
+            <p><%= link_to "Log out", destroy_user_session_path , method: :delete, class: "dropdown-item" %></p>
       <% end %>
         </div>
       </li>
