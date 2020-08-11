@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row justify-content-around mt-3">
-    <!-- [...] -->
-    <%= form_tag items_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an art"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary mt-1" %>
-    <% end %>
-<!-- the list of movies -->
+
+  <%= form_tag items_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an art"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary mt-1" %>
+  <% end %>
+
     <% @items.each do |item| %>
       <div class="col-12 col-md-6 col-lg-3">
         <% if item.photo.attached? %>
@@ -21,12 +21,229 @@
             <h2><%= item.category %></h2>
             <p><em><%= item.price %></em></p>
 
-          </div>
-          <%= link_to "Full description", item_path(item), class: 'card-link' %>
-        </div>
-      </div>
-    <% end %>
+<div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar3 active-nav3 w-nav">
+  <div class="nav3-wrap">
+    <a href="#" id="product-node-27" class="brand w-nav-brand">
+    </a>
+    <div id="product-node-26" class="nav3-menu-wrap">
+      <nav role="navigation" class="nav3-menu w-nav-menu"><a href="#abstract" class="nav-link w-nav-link">Abstract</a><a href="#decorative" class="nav-link w-nav-link">Decorative</a><a href="#drawings" class="nav-link w-nav-link">Drawings</a><a href="#paintings" class="nav-link w-nav-link">Paintings</a><a href="#photo" class="nav-link w-nav-link">Photo</a><a href="#print" class="nav-link w-nav-link">Print</a></nav>
+    </div>
   </div>
 </div>
-      <%= link_to "Back", root_path %>
 
+<div class="wrapper m100">
+  <div class="section">
+    <div class="w-layout-grid headline-grid">
+        <div id="product-node-28">
+          <div class="colour-dot"></div>
+          <div class="content12-image-description"><a id="abstract" class="size3-link size3-top-clear">Abstract</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="w-layout-grid content-cat-grid">
+  <% @items.each do |item| %>
+    <div id="product-node-card">
+      <div class="image-wrap">
+      <% if item.photo.attached? && item.category == "Abstract" %>
+        <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
+        </div>
+        <div class="catagory-description-wrap">
+          <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
+            <p class="paragraph-70"><%= item.title %></p>
+            <p class="paragraph-70"><%= item.description %></p>
+            <div>
+              <%= link_to "Explore item", item_path(item), class: "paragraph-70 btn btn-ghost" %>
+            </div>
+          </div>
+        </div>
+     </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="wrapper m50">
+  <div class="section">
+    <div class="w-layout-grid headline-grid">
+        <div id="product-node-28">
+          <div class="colour-dot"></div>
+          <div class="content12-image-description"><a id="decorative" class="size3-link size3-top-clear">Decorative</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="w-layout-grid content-cat-grid">
+  <% @items.each do |item| %>
+    <div id="product-node-card">
+      <div class="image-wrap">
+      <% if item.photo.attached? && item.category == "Decorative" %>
+        <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
+        </div>
+        <div class="catagory-description-wrap">
+          <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
+            <p class="paragraph-70"><%= item.title %></p>
+            <p class="paragraph-70"><%= item.description %></p>
+            <div>
+              <%= link_to "Explore item", item_path(item), class: "paragraph-70 btn btn-ghost" %>
+            </div>
+          </div>
+        </div>
+     </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="wrapper m50">
+  <div class="section">
+    <div class="w-layout-grid headline-grid">
+        <div id="product-node-28">
+          <div class="colour-dot"></div>
+          <div class="content12-image-description"><a id="drawings" class="size3-link size3-top-clear">Drawings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="w-layout-grid content-cat-grid">
+  <% @items.each do |item| %>
+    <div id="product-node-card">
+      <div class="image-wrap">
+      <% if item.photo.attached? && item.category == "Drawings" %>
+        <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
+        </div>
+        <div class="catagory-description-wrap">
+          <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
+            <p class="paragraph-70"><%= item.title %></p>
+            <p class="paragraph-70"><%= item.description %></p>
+            <div>
+              <%= link_to "Explore item", item_path(item), class: "paragraph-70 btn btn-ghost" %>
+            </div>
+          </div>
+        </div>
+     </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="wrapper m50">
+  <div class="section">
+    <div class="w-layout-grid headline-grid">
+        <div id="product-node-28">
+          <div class="colour-dot"></div>
+          <div class="content12-image-description"><a id="paintings" class="size3-link size3-top-clear">Paintings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="w-layout-grid content-cat-grid">
+  <% @items.each do |item| %>
+    <div id="product-node-card">
+      <div class="image-wrap">
+      <% if item.photo.attached? && item.category == "Paintings" %>
+        <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
+        </div>
+        <div class="catagory-description-wrap">
+          <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
+            <p class="paragraph-70"><%= item.title %></p>
+            <p class="paragraph-70"><%= item.description %></p>
+            <div>
+              <%= link_to "Explore item", item_path(item), class: "paragraph-70 btn btn-ghost" %>
+            </div>
+          </div>
+        </div>
+     </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="wrapper m50">
+  <div class="section">
+    <div class="w-layout-grid headline-grid">
+        <div id="product-node-28">
+          <div class="colour-dot"></div>
+          <div class="content12-image-description"><a id="photo" class="size3-link size3-top-clear">Photo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="w-layout-grid content-cat-grid">
+  <% @items.each do |item| %>
+    <div id="product-node-card">
+      <div class="image-wrap">
+      <% if item.photo.attached? && item.category == "Photo" %>
+        <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
+        </div>
+        <div class="catagory-description-wrap">
+          <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
+            <p class="paragraph-70"><%= item.title %></p>
+            <p class="paragraph-70"><%= item.description %></p>
+            <div>
+              <%= link_to "Explore item", item_path(item), class: "paragraph-70 btn btn-ghost" %>
+            </div>
+          </div>
+        </div>
+     </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="wrapper m50">
+  <div class="section">
+    <div class="w-layout-grid headline-grid">
+        <div id="product-node-28">
+          <div class="colour-dot"></div>
+          <div class="content12-image-description"><a id="print" class="size3-link size3-top-clear">Print</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="w-layout-grid content-cat-grid">
+  <% @items.each do |item| %>
+    <div id="product-node-card">
+      <div class="image-wrap">
+      <% if item.photo.attached? && item.category == "Print" %>
+        <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
+        </div>
+        <div class="catagory-description-wrap">
+          <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
+            <p class="paragraph-70"><%= item.title %></p>
+            <p class="paragraph-70"><%= item.description %></p>
+            <div>
+              <%= link_to "Explore item", item_path(item), class: "paragraph-70 btn btn-ghost" %>
+            </div>
+          </div>
+        </div>
+     </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>

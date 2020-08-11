@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :title, presence: true, length: { minimum: 5 }
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 5 }
