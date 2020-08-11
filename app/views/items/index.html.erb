@@ -49,8 +49,10 @@
     <div id="product-node-card">
       <div class="image-wrap">
       <% if item.photo.attached? && item.category == "Abstract" %>
+      <%= link_to item_path(item) do %>
         <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
         </div>
+        <% end %>
         <div class="catagory-description-wrap">
           <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
             <p class="paragraph-70"><%= item.title %></p>
@@ -85,8 +87,10 @@
     <div id="product-node-card">
       <div class="image-wrap">
       <% if item.photo.attached? && item.category == "Decorative" %>
+      <%= link_to item_path(item) do %>
         <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
         </div>
+        <% end %>
         <div class="catagory-description-wrap">
           <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
             <p class="paragraph-70"><%= item.title %></p>
@@ -121,8 +125,10 @@
     <div id="product-node-card">
       <div class="image-wrap">
       <% if item.photo.attached? && item.category == "Drawings" %>
+      <%= link_to item_path(item) do %>
         <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
         </div>
+        <% end %>
         <div class="catagory-description-wrap">
           <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
             <p class="paragraph-70"><%= item.title %></p>
@@ -158,8 +164,10 @@
     <div id="product-node-card">
       <div class="image-wrap">
       <% if item.photo.attached? && item.category == "Paintings" %>
+      <%= link_to item_path(item) do %>
         <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
         </div>
+        <% end %>
         <div class="catagory-description-wrap">
           <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
             <p class="paragraph-70"><%= item.title %></p>
@@ -194,8 +202,10 @@
     <div id="product-node-card">
       <div class="image-wrap">
       <% if item.photo.attached? && item.category == "Photo" %>
+      <%= link_to item_path(item) do %>
         <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
         </div>
+        <% end %>
         <div class="catagory-description-wrap">
           <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
             <p class="paragraph-70"><%= item.title %></p>
@@ -230,8 +240,10 @@
     <div id="product-node-card">
       <div class="image-wrap">
       <% if item.photo.attached? && item.category == "Print" %>
+      <%= link_to item_path(item) do %>
         <div class="product-general" style="background-image: url('<%= cl_image_path item.photo.key%>')">
         </div>
+        <% end %>
         <div class="catagory-description-wrap">
           <div class="content12-image-description"><a href="" class="size3-link size3-top-clear"></a>
             <p class="paragraph-70"><%= item.title %></p>
