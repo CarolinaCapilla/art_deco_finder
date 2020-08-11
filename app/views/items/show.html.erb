@@ -1,20 +1,29 @@
 <div class="section">
   <div class="layout-grid product-grid">
     <div id="product-node" class="product-content-wrap"><a href="#" class="size-link"><%= @item.title %></a>
-      <div class="paragraph">£<%= @item.price %></div>
+      <div class="paragraph">£<%= @item.price %> /per day</div>
       <div class="product-product-info-wrap">
         <div class="paragraph-70"><%= @item.description %></div>
-        <div>Reviews</div>
-        <ul class="list-group">
-          <% @item.reviews.each do |review| %>
-            <li class="paragraph-70"><%= review.content %>
-              <%= link_to "Remove",
+        <div class="paragraph"> <%= pluralize @item.reviews.size, "Review" %></div>
+        <div class="paragraph-70 p-3">
+          <% if @item.reviews.blank? %>
+            Be the first to leave a review
+          <ul>
+          <% else %>
+            <% @item.reviews.each do |review| %>
+              <li class="paragraph-70"><%= review.content %>
+              <% if current_user == review.user %>
+                <%= link_to "",
                   review_path(review),
+                  class: 'far fa-trash-alt',
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
-            </li>
-          <% end %>
-        </ul>
+              <% end %>
+            <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="product-deco-text"><%= @item.category %></div>
@@ -25,8 +34,10 @@
 
 
     <%= link_to "Book", new_item_booking_path(@item) %>
-    <%= link_to "Edit", edit_item_path(@item) %>
-    <%= link_to "Delete", item_path(@item), method: :delete, data: {confirm:"Are you sure you want to delete this item?"} %>
+    <% if current_user == @item.user %>
+      <%= link_to "Edit", edit_item_path(@item) %>
+      <%= link_to "Delete", item_path(@item), method: :delete, data: {confirm:"Are you sure you want to delete this item?"} %>
+    <% end %>
     <%= link_to "Full list", items_path %>
     <%= link_to 'Leave a review', new_item_review_path(@item) %>
   </div>

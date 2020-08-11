@@ -6,18 +6,23 @@ class ItemsController < ApplicationController
     if params[:query].present?
       @items = Item.search_by_title_and_description(params[:query])
     else
-      @items = Item.all
+      @items = policy_scope(Item)
+    end
   end
 
-  def show; end
+  def show
+    @reviews = Review.all
+  end
 
   def new
     @item = Item.new
+    authorize @item
   end
 
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    authorize @item
     if @item.save
       redirect_to item_path(@item), notice: "Item successfully created."
     else
@@ -44,6 +49,7 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def item_params
