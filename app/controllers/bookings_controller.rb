@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      # set booking to true @booking.booked = true ?
       @booking.update_attributes(booked: true)
       redirect_to booking_path(@booking), notice: "Booking successfully created."
     else

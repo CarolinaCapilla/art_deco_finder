@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @item = Item.find(params[:item_id])
     @review.item = @item
+    @review.user = current_user
     authorize @review
     if @review.save
       redirect_to item_path(@item)

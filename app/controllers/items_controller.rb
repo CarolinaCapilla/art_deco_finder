@@ -6,7 +6,9 @@ class ItemsController < ApplicationController
     @items = policy_scope(Item)
   end
 
-  def show; end
+  def show
+    @reviews = Review.all
+  end
 
   def new
     @item = Item.new
