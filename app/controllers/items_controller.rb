@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     if params[:query].present?
-      @items = Item.search_by_title_and_description(params[:query])
+      @items = policy_scope(Item.search_by_title_and_description(params[:query]))
     else
       @items = policy_scope(Item)
     end
