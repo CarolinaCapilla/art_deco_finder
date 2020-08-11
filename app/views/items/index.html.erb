@@ -1,3 +1,26 @@
+<div class="container">
+  <div class="row justify-content-around mt-3">
+
+  <%= form_tag items_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an art"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary mt-1" %>
+  <% end %>
+
+    <% @items.each do |item| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <% if item.photo.attached? %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo.key, height: 300, width: 400, crop: :fill %>')">
+        <% end %>
+          <div class="card-description">
+            <h2><%= item.title %></h2>
+            <h2><%= item.description %></h2>
+            <h2><%= item.category %></h2>
+            <p><em><%= item.price %></em></p>
+
 <div data-collapse="medium" data-animation="default" data-duration="400" data-no-scroll="1" role="banner" class="navbar3 active-nav3 w-nav">
   <div class="nav3-wrap">
     <a href="#" id="product-node-27" class="brand w-nav-brand">
