@@ -1,0 +1,17 @@
+
+<div class="d-flex p-3">
+  <div class="m-auto">
+    <%= form_tag items_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control form-control-lg",
+        placeholder: "Find an art"
+      %>
+  </div>
+  <div class="">
+    <%= submit_tag "Search", class: "btn-ghost btn-lg" %>
+    <% end %>
+  </div>
+</div>
+
+
