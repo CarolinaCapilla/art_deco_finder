@@ -19,8 +19,8 @@
 <div class="my-container">
   <h2 class="size-link">My bookings</h2>
   <div class="tabs mb-3">
-    <a href="" class="tab active">Completed</a>
-    <a href="" class="tab">Pending</a>
+    <a href="" class="tab active">Pending</a>
+    <a href="" class="tab">Completed</a>
   </div>
 
   <% if @bookings.count > 0 %>
@@ -36,7 +36,8 @@
           <h2><%= booking.item.title %></h2>
           <% price = (booking.end_date - booking.start_date).to_i * booking.item.price + 40 %>
           <p>Total price paid: £<%= price %></p>
-          <p>Status:<strong> Completed</strong> on <%= booking.end_date.strftime('%d %B %Y')%></p>
+          <p><strong> Booked</strong> on <%= booking.start_date.strftime('%d %B %Y')%></p>
+          <p><strong> Ending</strong> on <%= booking.end_date.strftime('%d %B %Y')%></p>
           <p><%= link_to 'Leave a review', new_item_review_path(booking.item) %></p>
         </div>
       </div>
