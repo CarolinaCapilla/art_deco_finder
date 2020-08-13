@@ -250,3 +250,18 @@
 .btn-ghost:hover {
   opacity: 1;
 }
+
+.home-btn-ghost {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 24px;
+  border-radius: 0px;
+  font-weight: lighter;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.home-btn-ghost:hover {
+  color: #ffffff;
+  opacity: 1;
+}
