@@ -1,4 +1,13 @@
-<%= simple_form_for [ @item, @review ] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<h3 class='text-center size-link my-3'> Add a review</h3>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <%= simple_form_for [ @item, @review ] do |f| %>
+          <%= f.input :content %>
+          <%= f.submit "Submit review", class: "btn-ghost btn-ghost:hover my-2 paragraph-70" %>
+        <% end %>
+        <%= link_to 'Back', item_path(@item) %>
+      </div>
+    </div>
+  </div>
