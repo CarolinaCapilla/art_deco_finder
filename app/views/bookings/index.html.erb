@@ -28,10 +28,9 @@
 
       <div class="card-product mb-3">
         <div class="card-img">
-          <%= cl_image_tag booking.item.photo.key, height: 100, width: 120, crop: :fill %>
+          <%= cl_image_tag booking.item.photo.key, width: 120, height: 120, crop: :fill %>
         </div>
-        
-        <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+
         <div class="card-product-infos">
           <h2><%= booking.item.title %></h2>
           <% price = (booking.end_date - booking.start_date).to_i * booking.item.price + 40 %>

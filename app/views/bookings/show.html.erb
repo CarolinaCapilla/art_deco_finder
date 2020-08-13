@@ -12,7 +12,7 @@
       <p><strong>Total Price: </strong> £<%= price %></p>
     </div>
     <div class="col-6 mt-3">
-      <%= cl_image_tag @booking.item.photo.key, height: 400, width: 500, crop: :fill %>
+      <%= cl_image_tag @booking.item.photo.key, height: 400, width: 600, crop: :fill %>
     </div>
   </div>
   <% if current_user == @booking.user %>
