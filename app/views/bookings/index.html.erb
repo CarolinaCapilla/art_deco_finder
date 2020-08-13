@@ -1,20 +1,51 @@
-<div class="container">
-  <h2>My bookings</h2>
+
+          <%# <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/> %>
+          <%# <p><small><%= booking.start_date.strftime('%d %B %Y')</small></p><p><small><%= booking.end_date.strftime('%d %B %Y')%>
+          <%# <p class="paragraph-70">Artwork Title: <%= booking.item.title</p>
+          <p class="paragraph-70">Category: <%= booking.item.category</p>
+          <p class="paragraph-70">Description: <%= booking.item.description %>
+          <%# <p class="paragraph-70">Price: £<%= booking.item.price %>
+          <%# <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
+          <%# <%= link_to "Edit Booking", edit_item_booking_path(booking.item, booking) %>
+        <%# <% end %> 
+      <%# <% else %> 
+      <%# </div>
+      
+      <% end %>
+    <%# </div>
+  </div> %> 
+  <%# <%= link_to "Back", root_path %>
+<%# </div> %> 
+<div class="my-container">
+  <h2 class="size-link">My bookings</h2>
+  <div class="tabs mb-3">
+    <a href="" class="tab active">Pending</a>
+    <a href="" class="tab">Completed</a>
+  </div>
+
   <% if @bookings.count > 0 %>
     <% @bookings.each do |booking| %>
-      <p>Start Date: <%= booking.start_date.strftime('%d-%m-%Y') %></p>
-      <p>End Date: <%= booking.end_date.strftime('%d-%m-%Y')  %></p>
-      <p>Artwork Title: <%= booking.item.title %></p>
-      <p>Category: <%= booking.item.category %></p>
-      <p>Description: <%= booking.item.description %></p>
-      <p>Price: £<%= booking.item.price %></p>
-      <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
-      <%= link_to "Edit Booking", edit_item_booking_path(booking.item, booking) %>
-      <hr>
-    <% end %>
-  <% else %>
-    <p>No bookings so far, time to have a look at some awesome Artwork!</p>
-  <% end %>
-  <%= link_to "Back", root_path %>
 
+      <div class="card-product mb-3">
+        <div class="card-img">
+          <%= cl_image_tag booking.item.photo.key, width: 120, height: 120, crop: :fill %>
+        </div>
+
+        <div class="card-product-infos">
+          <h2><%= booking.item.title %></h2>
+          <% price = (booking.end_date - booking.start_date).to_i * booking.item.price + 40 %>
+          <p>Total price paid: £<%= price %></p>
+          <p><strong> Booked</strong> on <%= booking.start_date.strftime('%d %B %Y')%></p>
+          <p><strong> Ending</strong> on <%= booking.end_date.strftime('%d %B %Y')%></p>
+          <p><%= link_to 'Leave a review', new_item_review_path(booking.item) %></p>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+    <p>No bookings so far, time to have a look at some awesome Artwork!</p>
+    <% end %>
+    <%= link_to "Home", root_path %>
 </div>
+
+
+
